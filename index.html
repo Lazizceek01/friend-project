@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="uz">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>HexIT — 3D Cards</title>
+  <style>
+    :root {
+      --accent1: #7c3aed;
+      --accent2: #06b6d4;
+      --card-w: 300px;
+      --card-h: 420px;
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, sans-serif;
+      overflow-x: hidden;
+      color: white;
+      background: #000;
+      min-height: 100vh;
+    }
+
+    .wrap {
+      display: flex;
+      gap: 30px;
+      padding: 60px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .card-3d {
+      width: var(--card-w);
+      height: var(--card-h);
+      perspective: 1400px;
+      cursor: pointer;
+    }
+
+    .card {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform .6s cubic-bezier(.3, .8, .3, 1);
+    }
+
+    .face {
+      position: absolute;
+      inset: 0;
+      backface-visibility: hidden;
+      border-radius: 18px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      background: linear-gradient(135deg, rgba(124, 58, 237, 0.2), rgba(6, 182, 212, 0.2));
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 0 35px rgba(124, 58, 237, 0.3);
+    }
+
+    /* front */
+    .logo {
+      width: 70px;
+      height: 70px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--accent1), var(--accent2));
+      display: grid;
+      place-items: center;
+      font-size: 22px;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 16px;
+    }
+
+    h3 {
+      margin: 0 0 6px 0
+    }
+
+    .pill {
+      background: rgba(255, 255, 255, 0.12);
+      padding: 6px 10px;
+      border-radius: 10px;
+      margin-top: 4px;
+      font-size: 13px
+    }
+
+    /* back */
+    .back {
+      transform: rotateY(180deg);
+    }
+
+    .interests {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-top: 10px
+    }
+    .btnlaziz{  
+      background-color: Blue;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="wrap">
+
+    <!-- Template Card 1 -->
+    <div class="card-3d">
+      <div class="card">
+
+        <div class="face front">
+          <div class="logo">HexIT</div>
+          <h3>Ilhomjon Toxirov</h3>
+          <div class="pill">2007-01-9</div>
+          <div class="pill">toxirovilhom01@gmail.com</div>
+          <div style="margin-top:10px;font-size:14px">Qiziqishlar: 🖥 🎮</div>
+          <div class="interests">
+            <div class="pill">HTML/CSS</div>
+            <div class="pill">Java Script</div>
+            <div class="pill">React</div>
+          </div>
+        </div>
+
+        <div class="face back">
+          <h3>GitHub Profile</h3>
+          <p style="opacity:.9;margin-top:10px">Pastdagi link orqali mening GitHub sahifamga o'ting:</p>
+          <a href="https://github.com/yourusername" target="_blank"
+            style="margin-top:20px;color:#9ae6ff;font-size:16px">➡️ GitHubga o'tish</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card-3d">
+      <div class="card">
+
+        <div class="face front">
+          <div class="logo">MQ</div>
+          <h3>Rasul Ortigaliyev</h3>
+          <div class="pill">0000-00-00</div>
+          <div class="pill">KingHouse01@example.uz</div>
+          <div style="margin-top:10px;font-size:14px">Qiziqishlar:</div>
+          <div class="interests">
+            <div class="pill">GameDev</div>
+            <div class="pill">UI/UX</div>
+            <div class="pill">TypeScript</div>
+            <div class="pill">JavaScript</div>
+          </div>
+        </div>
+
+        <div class="face back">
+          <h3>GitHub Profile</h3>
+          <a href="https://github.com/malika" target="_blank" style="margin-top:30px;color:#9ae6ff;font-size:16px">➡️
+            GitHubga o'tish</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card-3d">
+      <div class="card">
+
+        <div class="face front">
+          <div class="logo">RB</div>
+          <h3>Laziz Azizov</h3>
+          <div class="pill">2004-08-10</div>
+          <div class="pill">lazizceek01@example.uz</div>
+          <div style="margin-top:10px;font-size:14px">Qiziqishlar:</div>
+          <div class="interests">
+            <div class="pill">HTML/CSS</div>
+            <div class="pill">UI/UX</div>
+            <div class="pill">React</div>
+            <div class="pill">JavaScript</div>
+              <div class="pill">
+                  <a href="" class="btnlaziz">Click me</a>
+              </div>
+          </div>
+        </div>
+        <div class="face back">
+          <h3>GitHub Profile</h3>
+          <a href="https://github.com/Lazizceek01" target="_blank" style="margin-top:30px;color:#9ae6ff;font-size:16px">➡️ GitHubga
+            o'tish</a>
+        </div>
+        
+        </div>
+        </div>
+        
+        </div>
+        
+        <script>
+          // toggle flip only on click
+          const cards = document.querySelectorAll('.card');
+          cards.forEach(card => {
+            card.addEventListener('click', () => {
+              const flipped = card.classList.contains('flipped');
+              card.classList.toggle('flipped', !flipped);
+              card.style.transform = flipped ? "rotateY(0deg)" : "rotateY(180deg)";
+            });
+          });
+        </script>
+        
+        </body>
+        
+        </html>
